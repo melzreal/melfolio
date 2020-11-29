@@ -8,7 +8,7 @@ from wagtail.search import index
 
 class BlogIndexPage(Page):
     template = "blog/blog_index.html"
-    intro = RichTextField(blank=True)
+    intro = RichTextField(blank=True, null=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
