@@ -1,0 +1,24 @@
+{% load wagtailimages_tags %}
+
+<div class="container-fluid p-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="display-4 unboxed-purple-text">{{self.title}}</h2>
+      <p class="lead"> {{self.lead_text}} </p>
+      <p> {{self.text}} </p>
+      {% if self.button_page %}
+        <a href="{{card.button_page}}" class="btn btn-primary">
+          Learn more
+        </a>
+      {% endif %}
+    </div>
+    <div class="col-md-6 pt-3">
+      {% for picture in self.image_cards %}
+        {% image picture.image_one fill-300x200 as image_one %}
+        {% image picture.image_two fill-300x200 as image_two %}
+        <img class="pb-2" src="{{image_one.url}}" alt="{{image_one.alt}}">
+        <img src="{{image_two.url}}" alt="{{image_two.alt}}">
+      {% endfor %}
+    </div>
+  </div>
+</div>

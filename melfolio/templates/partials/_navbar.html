@@ -1,0 +1,14 @@
+ <!-- Navbar -->
+ {% load menu_tags %}
+ {% load static %}
+ <nav class="navbar navbar-expand-md nav-container">
+   <a href="/" class="navbar-brand float-left"> </a>
+   <button class="navbar-toggler navbar-light" data-toggle="collapse" data-target="#navCollapse">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse float-right" id="navCollapse">
+     <ul class="navbar-nav ml-auto">
+       {% main_menu %}
+     </ul>
+   </div>
+ </nav>

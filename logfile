@@ -1,0 +1,7 @@
+2020-11-29 13:50:47.085 GMT [6569] LOG:  starting PostgreSQL 13.1 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.27), 64-bit
+2020-11-29 13:50:47.088 GMT [6569] LOG:  listening on IPv6 address "::1", port 5432
+2020-11-29 13:50:47.088 GMT [6569] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-11-29 13:50:47.088 GMT [6569] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-11-29 13:50:47.091 GMT [6570] LOG:  database system was shut down at 2020-11-29 13:50:42 GMT
+2020-11-29 13:50:47.093 GMT [6569] LOG:  database system is ready to accept connections
+2020-11-29 13:50:58.241 GMT [6584] FATAL:  database "mel_newfolio_db" does not exist

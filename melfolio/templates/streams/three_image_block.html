@@ -1,0 +1,21 @@
+{% load wagtailimages_tags %}
+{% load static %}
+
+{% for picture in self.image_cards %}
+{% image picture.image_one fill-420x300 as image_one %}
+{% image picture.image_two fill-420x300 as image_two %}
+{% image picture.image_three fill-420x300 as image_three %}
+<section class="py-5 override-row-width">
+  <div class="row">
+      <div class="p-2 pr-2 col-md-4 spaced-image">
+        <img class="lead-image" src="{{image_one.url}}" alt="{{image_one.alt}}">
+      </div>
+      <div class="p-2 col-md-4 spaced-image">
+        <img class="lead-image" src="{{image_two.url}}" alt="{{image_two.alt}}">
+      </div>
+      <div class="p-2 col-md-4 spaced-image">
+        <img class="lead-image" src="{{image_three.url}}" alt="{{image_three.alt}}">
+      </div>
+    </div>
+</section>
+{% endfor %}

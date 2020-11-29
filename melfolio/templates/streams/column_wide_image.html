@@ -1,0 +1,9 @@
+{% load wagtailimages_tags %}
+<div class="row">
+  <div class="col-12 pb-3">
+    {% for pic in self.cards %}
+      {% image pic.image fill-1080x608 as img %}
+      <img class="col" src="{{img.url}}" alt="{{img.alt}}">
+    {% endfor %}
+  </div>
+</div>
