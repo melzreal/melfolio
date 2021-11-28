@@ -89,9 +89,6 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'melfolio.wsgi.application'
-
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -169,4 +166,4 @@ WAGTAIL_SITE_NAME = "melfolio"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = os.environ.get('BASE_URL')
