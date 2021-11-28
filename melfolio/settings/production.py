@@ -1,33 +1,15 @@
-import os
-import dj_database_url
-
 from .base import *
 
 DEBUG = False
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-env = os.environ.copy()
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_S3_CUSTOM_DOMAIN = os.environ.get('AWS_S3_CUSTOM_DOMAIN')
 
-ALLOWED_HOSTS = ['*']
-
-if 'SECRET_KEY' in env:
-    SECRET_KEY = env['SECRET_KEY']
-
-if 'ALLOWED_HOSTS' in env:
-    ALLOWED_HOSTS = env['ALLOWED_HOSTS'].split(',')
-
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-      'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'mel_newfolio_db',
-            'CONN_MAX_AGE': 600,
-        }
-    }
-
+MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 try:
     from .local import *
